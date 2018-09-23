@@ -14,14 +14,23 @@ public class Person {
 
     private String lastname;
 
-    @OneToMany
+    @OneToMany(mappedBy = "person", fetch = FetchType.EAGER)
     private Set<Account> accountSet;
 
-    public Person() {
+    public Person(){
+
     }
 
     public int getId() {
         return id;
+    }
+
+    public Set<Account> getAccountSet() {
+        return accountSet;
+    }
+
+    public void setAccountSet(Set<Account> accountSet) {
+        this.accountSet = accountSet;
     }
 
     public void setId(int id) {

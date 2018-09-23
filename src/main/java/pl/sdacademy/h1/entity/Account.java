@@ -2,7 +2,6 @@ package pl.sdacademy.h1.entity;
 
 import javax.persistence.*;
 
-
 @Entity
 public class Account {
 
@@ -12,14 +11,13 @@ public class Account {
 
     private String title;
 
-    @ManyToOne (cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     private Person person;
 
     public Account() {
     }
 
     public int getId() {
-
         return id;
     }
 
